@@ -33,3 +33,23 @@ body {
 .btn-ejecutar:hover {
   background-color: #2ea043;
 }
+
+/* Estilos para los botones de selección de Fase */
+.nav-pills .nav-link {
+  color: #8b949e;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #238636 !important;
+  color: #ffffff !important;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.nav-pills .nav-link:hover:not(.active) {
+  color: #c9d1d9;
+  background-color: #30363d;
+  border-radius: 6px;
+}

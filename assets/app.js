@@ -1,17 +1,98 @@
+// ==========================================
+// MOTOR DE INTERFAZ GRÁFICA (UI)
+// ==========================================
+
+// Base de datos de ejercicios estructurada por fase
+const dbEjercicios = {
+  1: [
+    { id: "01", nombre: "01 - Positivo o Negativo" },
+    { id: "02", nombre: "02 - Edad para Votar" },
+    { id: "03", nombre: "03 - Número Par o Impar" },
+    { id: "04", nombre: "04 - Contraseña Segura" },
+    { id: "05", nombre: "05 - Mayor de Tres Números" },
+    { id: "06", nombre: "06 - Calculadora Básica" },
+    { id: "07", nombre: "07 - Año Bisiesto" },
+    { id: "08", nombre: "08 - Clasif. de Calificaciones" },
+    { id: "09", nombre: "09 - Precio con Descuento" },
+    { id: "10", nombre: "10 - Verificar Acceso" },
+  ],
+  2: [
+    { id: "2-01", nombre: "01 - Clasificador de Edades" },
+    { id: "2-02", nombre: "02 - Validar Fecha" },
+    { id: "2-03", nombre: "03 - Verificación de Roles" },
+    { id: "2-04", nombre: "04 - Impuestos por Ingreso" },
+    { id: "2-05", nombre: "05 - Conversión de Temperatura" },
+    { id: "2-06", nombre: "06 - Juego de Adivinanza" },
+    { id: "2-07", nombre: "07 - Evaluar Contraseña" },
+    { id: "2-08", nombre: "08 - Cálculo de Tarifa" },
+    { id: "2-09", nombre: "09 - Clasificación de Películas" },
+    { id: "2-10", nombre: "10 - Simulación de Semáforo" },
+  ],
+  3: [
+    { id: "3-01", nombre: "01 - Contar del 1 al 10" },
+    { id: "3-02", nombre: "02 - Sumatoria Simple" },
+    { id: "3-03", nombre: "03 - Tabla de Multiplicar" },
+    { id: "3-04", nombre: "04 - Pares entre 1 y 100" },
+    { id: "3-05", nombre: "05 - Cuenta Regresiva" },
+    { id: "3-06", nombre: "06 - Adivinar Número (Bucle)" },
+    { id: "3-07", nombre: "07 - Sumar hasta 100" },
+    { id: "3-08", nombre: "08 - Contar Vocales" },
+    { id: "3-09", nombre: "09 - Validar Edad (18-99)" },
+    { id: "3-10", nombre: "10 - Secuencia Creciente" },
+    { id: "3-11", nombre: "11 - Menú Interactivo" },
+    { id: "3-12", nombre: "12 - Solicitar Contraseña" },
+    { id: "3-13", nombre: "13 - Ingreso de Calificaciones" },
+    { id: "3-14", nombre: "14 - Confirmar Acción" },
+    { id: "3-15", nombre: "15 - Promedio de Números" },
+  ],
+};
+
+const selectDOM = document.getElementById("ejercicioSelect");
+const botonesFase = document.querySelectorAll(".nav-link");
+
+// Función para cargar las opciones dinámicamente
+function cargarOpciones(fase) {
+  selectDOM.innerHTML = ""; // Limpiamos las opciones anteriores
+  dbEjercicios[fase].forEach((ejercicio) => {
+    const option = document.createElement("option");
+    option.value = ejercicio.id;
+    option.textContent = ejercicio.nombre;
+    selectDOM.appendChild(option);
+  });
+}
+
+// Inicializar el panel con la Fase 1 por defecto
+cargarOpciones("1");
+
+// Escuchar los clicks en los botones de fase
+botonesFase.forEach((boton) => {
+  boton.addEventListener("click", (e) => {
+    // Quitar la clase 'active' de todos los botones
+    botonesFase.forEach((b) => b.classList.remove("active"));
+    // Agregar la clase 'active' al botón clickeado
+    e.target.classList.add("active");
+    // Leer el atributo 'data-fase' y cargar sus opciones
+    const faseSeleccionada = e.target.getAttribute("data-fase");
+    cargarOpciones(faseSeleccionada);
+  });
+});
+
+// ==========================================
+// LÓGICA DE EJECUCIÓN MATEMÁTICA
+// ==========================================
+
 document.getElementById("btnEjecutar").addEventListener("click", () => {
-  const seleccion = document.getElementById("ejercicioSelect").value;
+  const seleccion = selectDOM.value;
   const terminal = document.getElementById("terminal");
 
   const print = (texto) => {
     terminal.innerHTML += `\n${texto}`;
   };
 
-  terminal.innerHTML = `> Ejecutando ejercicio ${seleccion}...`;
+  terminal.innerHTML = `> Ejecutando módulo ${seleccion}...`;
 
   switch (seleccion) {
-    // ==========================================
-    // FASE 1: CONDICIONALES BÁSICOS
-    // ==========================================
+    // === FASE 1 ===
     case "01":
       let num1 = parseFloat(prompt("Ingrese un número:"));
       if (isNaN(num1)) print("[!] Error: No ingresaste un número válido.");
@@ -106,9 +187,7 @@ document.getElementById("btnEjecutar").addEventListener("click", () => {
       else print("[-] Error: Credenciales incorrectas.");
       break;
 
-    // ==========================================
-    // FASE 2: CONDICIONALES INTERMEDIOS
-    // ==========================================
+    // === FASE 2 ===
     case "2-01":
       let edadClasif = parseInt(prompt("Ingrese su edad:"));
       if (isNaN(edadClasif) || edadClasif < 0)
@@ -255,9 +334,7 @@ document.getElementById("btnEjecutar").addEventListener("click", () => {
       else print("[-] Error: Color de señalética no reconocido por el sensor.");
       break;
 
-    // ==========================================
-    // FASE 3: BUCLES Y CICLOS
-    // ==========================================
+    // === FASE 3 ===
     case "3-01":
       print("> Contando del 1 al 10:");
       for (let i = 1; i <= 10; i++) print(`Número: ${i}`);
