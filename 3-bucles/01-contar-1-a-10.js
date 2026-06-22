@@ -1,4 +1,4 @@
-// Título del Ejercicio
-// TODO: Implementar lógica aquí
-
-console.log("Archivo inicializado correctamente.");
+console.log("> Contando del 1 al 10:");
+for (let i = 1; i <= 10; i++) {
+  console.log(`Número: ${i}`);
+}

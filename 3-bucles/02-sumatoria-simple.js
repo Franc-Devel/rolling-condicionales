@@ -1,4 +1,5 @@
-// Título del Ejercicio
-// TODO: Implementar lógica aquí
-
-console.log("Archivo inicializado correctamente.");
+let suma = 0;
+for (let i = 1; i <= 50; i++) {
+  suma += i;
+}
+console.log(`[+] La suma de los primeros 50 números naturales es: ${suma}`);
