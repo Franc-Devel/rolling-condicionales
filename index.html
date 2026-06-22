@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel de Control | Condicionales y Bucles JS</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <h2 class="mb-4 text-center">Laboratorio de Lógica JS</h2>
+
+          <div class="bunker-card p-4">
+            <div class="mb-4">
+              <label for="ejercicioSelect" class="form-label text-muted"
+                >Seleccionar Ejercicio:</label
+              >
+              <select
+                class="form-select bg-dark text-light border-secondary"
+                id="ejercicioSelect"
+              >
+                <optgroup label="Fase 1: Básicos">
+                  <option value="01">01 - Positivo o Negativo</option>
+                  <option value="02">02 - Edad para Votar</option>
+                  <option value="03">03 - Número Par o Impar</option>
+                  <option value="04">04 - Contraseña Segura</option>
+                  <option value="05">05 - Mayor de Tres Números</option>
+                  <option value="06">06 - Calculadora Básica</option>
+                  <option value="07">07 - Año Bisiesto</option>
+                  <option value="08">08 - Clasif. de Calificaciones</option>
+                  <option value="09">09 - Precio con Descuento</option>
+                  <option value="10">10 - Verificar Acceso</option>
+                </optgroup>
+                <optgroup label="Fase 2: Intermedios">
+                  <option value="2-01">01 - Clasificador de Edades</option>
+                  <option value="2-02">02 - Validar Fecha</option>
+                  <option value="2-03">03 - Verificación de Roles</option>
+                  <option value="2-04">04 - Impuestos por Ingreso</option>
+                  <option value="2-05">05 - Conversión de Temperatura</option>
+                  <option value="2-06">06 - Juego de Adivinanza</option>
+                  <option value="2-07">07 - Evaluar Contraseña</option>
+                  <option value="2-08">08 - Cálculo de Tarifa</option>
+                  <option value="2-09">09 - Clasificación de Películas</option>
+                  <option value="2-10">10 - Simulación de Semáforo</option>
+                </optgroup>
+                <optgroup label="Fase 3: Bucles y Ciclos">
+                  <option value="3-01">01 - Contar del 1 al 10</option>
+                  <option value="3-02">02 - Sumatoria Simple</option>
+                  <option value="3-03">03 - Tabla de Multiplicar</option>
+                  <option value="3-04">04 - Pares entre 1 y 100</option>
+                  <option value="3-05">05 - Cuenta Regresiva</option>
+                  <option value="3-06">06 - Adivinar Número (Bucle)</option>
+                  <option value="3-07">07 - Sumar hasta 100</option>
+                  <option value="3-08">08 - Contar Vocales</option>
+                  <option value="3-09">09 - Validar Edad (18-99)</option>
+                  <option value="3-10">10 - Secuencia Creciente</option>
+                  <option value="3-11">11 - Menú Interactivo</option>
+                  <option value="3-12">12 - Solicitar Contraseña</option>
+                  <option value="3-13">13 - Ingreso de Calificaciones</option>
+                  <option value="3-14">14 - Confirmar Acción</option>
+                  <option value="3-15">15 - Promedio de Números</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="d-grid gap-2 mb-4">
+              <button class="btn btn-ejecutar fw-bold" id="btnEjecutar">
+                Ejecutar Código
+              </button>
+            </div>
+
+            <label class="form-label text-muted">Salida de Consola:</label>
+            <div id="terminal" class="terminal-output">
+              > Sistema inicializado. Esperando ejecución...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./assets/app.js"></script>
+  </body>
+</html>

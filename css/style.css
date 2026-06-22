@@ -1,0 +1,35 @@
+body {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+}
+
+.bunker-card {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-output {
+  background-color: #010409;
+  color: #56d364; /* Verde consola */
+  border: 1px solid #30363d;
+  padding: 15px;
+  border-radius: 6px;
+  font-family: "Courier New", Courier, monospace;
+  min-height: 200px;
+  white-space: pre-wrap;
+}
+
+.btn-ejecutar {
+  background-color: #238636;
+  color: white;
+  border: none;
+}
+
+.btn-ejecutar:hover {
+  background-color: #2ea043;
+}

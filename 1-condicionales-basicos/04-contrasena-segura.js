@@ -1,4 +1,16 @@
-// Título del Ejercicio
-// TODO: Implementar lógica aquí
+const readline = require("readline").createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
-console.log("Archivo inicializado correctamente.");
+const PASS_GUARDADA = "Root1234!";
+
+readline.question("Ingrese la contraseña: ", (input) => {
+  if (input === PASS_GUARDADA) {
+    console.log("[+] Acceso concedido. Las contraseñas coinciden.");
+  } else {
+    console.log("[-] Acceso denegado. Contraseña incorrecta.");
+  }
+
+  readline.close();
+});
